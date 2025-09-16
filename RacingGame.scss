@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Arial:400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.game-container {
+  position: relative;
+  background: #222;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+#gameCanvas {
+  display: block;
+  border: 3px solid #00ff88;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.game-ui {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.score, .speed {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #00ff88;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  border: 3px solid #ff4757;
+  display: block;
+  z-index: 20;
+}
+
+.game-over h2 {
+  color: #ff4757;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.game-over p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.restart-btn {
+  background: linear-gradient(45deg, #00ff88, #00d4aa);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+}
+
+.instructions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #00ff88;
+  max-width: 200px;
+  font-size: 14px;
+}
+
+// Hide game-over by default, show only when .game-over is rendered
+.game-over {
+  display: none;
+}
+
+.game-over#gameOver {
+  display: block;
+}
